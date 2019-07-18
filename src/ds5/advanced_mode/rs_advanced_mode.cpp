@@ -47,6 +47,17 @@ void rs2_toggle_advanced_mode(rs2_device* dev, int enable, rs2_error** error) BE
 }
 HANDLE_EXCEPTIONS_AND_RETURN(, dev, enable)
 
+void rs2_set_laser_power(rs2_device* dev, float laser_power, rs2_error** error) BEGIN_API_CALL
+{
+    VALIDATE_NOT_NULL(dev);
+    auto advanced_mode = VALIDATE_INTERFACE(dev->device, librealsense::ds5_advanced_mode_interface);
+    librealsense::laser_power_control lp;
+    lp.laser_power = laser_power;
+    lp.was_set = true;
+    advanced_mode->set_laser_power(lp);
+}
+HANDLE_EXCEPTIONS_AND_RETURN(, dev, laser_power)
+
 void rs2_is_enabled(rs2_device* dev, int* enabled, rs2_error** error) BEGIN_API_CALL
 {
     VALIDATE_NOT_NULL(dev);

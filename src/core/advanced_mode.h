@@ -94,6 +94,8 @@ namespace librealsense
         virtual void set_census_radius(const STCensusRadius& val) = 0;
         virtual void set_amp_factor(const STAFactor& val) = 0;
 
+        virtual void set_laser_power(const laser_power_control& val) = 0;
+
         virtual std::vector<uint8_t> serialize_json() const = 0;
         virtual void load_json(const std::string& json_content) = 0;
 
@@ -149,6 +151,8 @@ namespace librealsense
         void set_census_radius(const STCensusRadius& val) override;
         void set_amp_factor(const STAFactor& val) override;
 
+        void set_laser_power(const laser_power_control& val) override; //< Moved here from private block
+
         std::vector<uint8_t> serialize_json() const override;
         void load_json(const std::string& json_content) override;
 
@@ -181,7 +185,6 @@ namespace librealsense
         void get_color_auto_white_balance(auto_white_balance_control* ptr) const;
         void get_color_power_line_frequency(power_line_frequency_control* ptr) const;
 
-        void set_laser_power(const laser_power_control& val);
         void set_laser_state(const laser_state_control& val);
         void set_depth_exposure(const exposure_control& val);
         void set_depth_auto_exposure(const auto_exposure_control& val);

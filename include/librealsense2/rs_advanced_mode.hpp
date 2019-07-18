@@ -31,6 +31,13 @@ namespace rs400
             rs2::error::handle(e);
         }
 
+        void set_laser_power(float laser_power)
+        {
+            rs2_error* e = nullptr;
+            rs2_set_laser_power(_dev.get(), laser_power, &e);
+            rs2::error::handle(e);
+        }
+
         bool is_enabled() const
         {
             rs2_error* e = nullptr;

@@ -215,6 +215,7 @@ EXPORTS
     rs2_rs400_visual_preset_to_string
     rs2_is_enabled
     rs2_toggle_advanced_mode
+    rs2_set_laser_power
     rs2_load_json
     rs2_serialize_json
 

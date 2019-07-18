@@ -17,6 +17,9 @@ extern "C" {
 /* Enable/Disable Advanced-Mode */
 void rs2_toggle_advanced_mode(rs2_device* dev, int enable, rs2_error** error);
 
+/* Set laser power */
+void rs2_set_laser_power(rs2_device* dev, float laser_power, rs2_error** error);
+
 /* Check if Advanced-Mode is enabled */
 void rs2_is_enabled(rs2_device* dev, int* enabled, rs2_error** error);
 
