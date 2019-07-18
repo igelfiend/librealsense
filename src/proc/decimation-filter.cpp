@@ -195,7 +195,7 @@ namespace librealsense
     }
 
     const uint8_t decimation_min_val = 1;
-    const uint8_t decimation_max_val = 8;    // Decimation levels according to the reference design
+    const uint8_t decimation_max_val = 64;    // Decimation levels according to the reference design
     const uint8_t decimation_default_val = 2;
     const uint8_t decimation_step = 1;    // Linear decimation
 
